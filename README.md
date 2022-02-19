@@ -5,3 +5,9 @@
 `run/build.sh` build bowtie2 index for the random generated genome
 
 `Snakemake` map simulated reads back to the random generated index, and sort the bam file
+
+
+```bash
+
+snakemake --cores 12 
+```
