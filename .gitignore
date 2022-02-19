@@ -1,0 +1,6 @@
+data 
+genome 
+log 
+output 
+.snakemake 
+table.txt

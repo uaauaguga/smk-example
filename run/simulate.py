@@ -13,13 +13,13 @@ def get_random_string(length=10000):
 def main():
     seqs = []
     for i in range(5):
-        with open(f"genome/{i}.fa","w") as f:
+        with open(f"genome/fasta/{i}.fa","w") as f:
             f.write(f">genome-{i}\n")
             s = get_random_string()
             seqs.append(s)
             f.write(f"{s}\n")
     print("sample_id\tgenome_id")
-    for j in range(64):
+    for j in range(32):
         sample_id = str(j).zfill(4)
         genome_idx = randint(0,3)
         s = seqs[genome_idx]
@@ -27,8 +27,8 @@ def main():
         with open(f"data/{sample_id}.fa","w") as f:
             for k in range(5000):
                 f.write(f">{k}\n")
-                start = randint(0,9990)
-                end = start + 10
+                start = randint(0,10000-20)
+                end = start + 20
                 f.write( s[start:end] + "\n")
 
         
